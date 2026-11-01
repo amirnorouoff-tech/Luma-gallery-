@@ -1,0 +1,218 @@
+/* ================= ریست و تنظیمات پایه ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    direction: rtl;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* ================= هدر اصلی ================= */
+.main-header {
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+/* نوار بالایی هدر */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.header-logo img {
+    height: 60px; /* ارتفاع مناسب برای لوگو */
+    object-fit: contain;
+}
+
+/* نوار پایینی هدر */
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    font-size: 0.9rem;
+    border-top: 1px solid #f9f9f9;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #c8a364; /* رنگ طلایی */
+}
+
+.header-left-side {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: #666;
+}
+
+.contact-info {
+    display: flex;
+    gap: 15px;
+}
+
+.gold-price {
+    font-weight: 500;
+    color: #333;
+}
+
+/* ================= بنر اصلی (Hero) ================= */
+.hero-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    right: 15%; /* قرارگیری متن در سمت راست طبق تصویر */
+    transform: translateY(-50%);
+    text-align: center;
+    color: #222;
+}
+
+.hero-text h1 {
+    font-family: 'Times New Roman', serif; /* فونت کلاسیک برای انگلیسی */
+    font-size: 3.5rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero-text hr {
+    border: none;
+    border-top: 1px solid #333;
+    width: 80%;
+    margin: 15px auto;
+}
+
+.hero-text p {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* ================= نوار تبلیغاتی ================= */
+.promo-bar {
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 15px 40px;
+}
+
+.promo-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.promo-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    line-height: 1.2;
+    border-left: 2px solid #ccc;
+    padding-left: 15px;
+}
+
+.promo-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ================= دسته‌بندی محصولات ================= */
+.categories-section {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
+.category-box {
+    text-align: center;
+    border-left: 1px solid #eee;
+    padding: 20px 10px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.category-box:last-child {
+    border-left: none;
+}
+
+.category-box:hover {
+    background-color: #f9f9f9;
+}
+
+.category-box img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover; /* تصاویر را به صورت یکنواخت برش می‌دهد */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.category-box p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #444;
+}
+
+/* ================= واکنش‌گرایی (Responsive) ================= */
+@media (max-width: 1024px) {
+    .categories-section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .category-box:nth-child(4) { border-left: none; }
+    .category-box { border-bottom: 1px solid #eee; }
+    .header-bottom {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text { right: 10%; }
+    .categories-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .category-box:nth-child(2n) { border-left: none; }
+}
